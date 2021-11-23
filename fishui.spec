@@ -54,7 +54,7 @@ cmake .. \
 popd
 
 %install
-%cmake_install
+%make_install -C build
 
 %files
 %doc README.md
