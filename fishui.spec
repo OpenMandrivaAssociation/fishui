@@ -58,11 +58,12 @@ popd
 
 %files
 %doc README.md
-%{_libqt5_archdatadir}/qml/FishUI
-%dir %{_libqt5_archdatadir}/qml/QtQuick
-%dir %{_libqt5_archdatadir}/qml/QtQuick/Controls.2
-%{_libqt5_archdatadir}/qml/QtQuick/Controls.2/fish-style
 %license LICENSE
+#{_libqt5_archdatadir}/qml/FishUI
+#dir #{_libqt5_archdatadir}/qml/QtQuick
+#dir #{_libqt5_archdatadir}/qml/QtQuick/Controls.2
+#{_libqt5_archdatadir}/qml/QtQuick/Controls.2/fish-style
+
 
 %files devel
 %dir %{_libdir}/cmake/
