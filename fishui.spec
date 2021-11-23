@@ -1,18 +1,17 @@
 Name:           fishui
-Version:        @SERVICE@
-Release:        0
+Version:        0.5
+Release:        1
 Summary:        Cutefish desktop interface library
 License:        GPL-3.0-or-later
 Group:          Development/Libraries/Other
 URL:            https://github.com/cutefishos/fishui
-Source:         %{name}-%{version}.tar.xz
+Source:         https://github.com/cutefishos/fishui/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  cmake(KF5WindowSystem)
-BuildRequires:  extra-cmake-modules
-BuildRequires:  gcc-c++
-BuildRequires:  libQt5Gui-private-headers-devel
-BuildRequires:  pkgconfig
-BuildRequires:  pkgconfig(Qt5Core) >= 5.15.2
+BuildRequires:  cmake(ECM)
+#BuildRequires:  libQt5Gui-private-headers-devel
+BuildRequires:  pkgconfig(Qt5Gui)
+BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5DBus)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5QuickControls2)
@@ -32,7 +31,6 @@ Features:
  * Window shadow
  * Desktop-level menu
  * The style of the Qt Quick control
- * ...
 
 %package devel
 Summary:        Development files for %{name}
