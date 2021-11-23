@@ -1,3 +1,5 @@
+%define _empty_manifest_terminate_build 0
+
 Name:           fishui
 Version:        0.5
 Release:        1
