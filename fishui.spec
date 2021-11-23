@@ -1,4 +1,8 @@
-%define _empty_manifest_terminate_build 0
+#define _empty_manifest_terminate_build 0
+
+%define major	0
+%define libname	%mklibname %{name} %{major}
+%define devname	%mklibname %{name} -d
 
 Name:           fishui
 Version:        0.5
@@ -33,12 +37,22 @@ Features:
  * Window shadow
  * Desktop-level menu
  * The style of the Qt Quick control
+ 
+%package -n %{libname}
+Summary:        Dynamic libraries from %{name}
+Group:          System/Libraries
+Provides:       fishui
 
-%package devel
+%description -n %{libname}
+Dynamic libraries from %{name}.
+
+%package -n %{devname}
 Summary:        Development files for %{name}
 Group:          Development/Libraries/Other
+Requires:        %{libname} = %{version}-%{release}
+Provides:        %{name}-devel = %{version}-%{release}
 
-%description devel
+%description -n %{devname}
 Development files for %{name} including headers and libraries
 
 %prep
@@ -58,16 +72,13 @@ popd
 %install
 %make_install -C build
 
-%files
+%files -n %{libname}
 %doc README.md
 %license LICENSE
-#{_libqt5_archdatadir}/qml/FishUI
-#dir #{_libqt5_archdatadir}/qml/QtQuick
-#dir #{_libqt5_archdatadir}/qml/QtQuick/Controls.2
-#{_libqt5_archdatadir}/qml/QtQuick/Controls.2/fish-style
+%{_libdir}/qt5/qml/QtQuick/Controls.2/fish-style
+%{_libdir}/qt5/qml/FishUI
 
-
-%files devel
+%files -n %{devname}
 %dir %{_libdir}/cmake/
 %{_libdir}/cmake/FishUI/
 %{_libdir}/libFishUI.so
