@@ -5,7 +5,7 @@
 %define devname	%mklibname %{name} -d
 
 Name:           fishui
-Version:        0.5
+Version:        0.7
 Release:        1
 Summary:        Cutefish desktop interface library
 License:        GPL-3.0-or-later
