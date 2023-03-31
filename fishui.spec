@@ -6,7 +6,7 @@
 
 Name:           fishui
 Version:        0.8
-Release:        1
+Release:        2
 Summary:        Cutefish desktop interface library
 License:        GPL-3.0-or-later
 Group:          Development/Libraries/Other
